@@ -1,0 +1,1233 @@
+
+/* =========================================
+   INVITACIÓN DE GRADUACIÓN - MUNDIAL 2026
+   ========================================= */
+
+/* COLORES Y CONFIGURACIÓN */
+
+:root {
+    --azul: #071523;
+    --azul-medio: #0c2033;
+    --azul-claro: #142c43;
+    --dorado: #d9ad59;
+    --dorado-claro: #f5d99b;
+    --crema: #f7f0e3;
+    --blanco: #fffdf8;
+    --gris: #bfc7cf;
+    --texto-oscuro: #172536;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    background: var(--azul);
+    color: var(--crema);
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+    background: var(--dorado);
+    color: var(--azul);
+}
+
+
+/* =========================================
+   NAVEGACIÓN
+   ========================================= */
+
+.navegacion {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    min-height: 76px;
+    padding: 18px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    border-bottom: 1px solid rgba(245, 217, 155, 0.18);
+    background: rgba(5, 15, 26, 0.55);
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.logo-icono {
+    font-size: 1.5rem;
+}
+
+.logo-anio {
+    color: var(--dorado);
+}
+
+.nav-boton {
+    padding: 10px 16px;
+    border: 1px solid var(--dorado);
+
+    color: var(--dorado-claro);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-boton:hover {
+    background: var(--dorado);
+    color: var(--azul);
+}
+
+
+/* =========================================
+   PORTADA
+   ========================================= */
+
+.portada {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 125px 22px 90px;
+
+    background-color: var(--azul);
+    background-image:
+        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=2000&q=85");
+    background-position: center;
+    background-size: cover;
+}
+
+.portada-overlay {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 35%,
+            rgba(8, 27, 44, 0.45),
+            rgba(3, 12, 22, 0.91) 75%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(3, 12, 22, 0.4),
+            rgba(3, 12, 22, 0.75)
+        );
+}
+
+.portada-contenido {
+    width: 100%;
+    max-width: 850px;
+    text-align: center;
+
+    animation: aparecer 1s ease both;
+}
+
+.etiqueta-superior,
+.etiqueta {
+    color: var(--dorado);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    line-height: 1.8;
+}
+
+.emblema {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+
+    margin: 30px 0 20px;
+}
+
+.emblema-linea {
+    width: 65px;
+    height: 1px;
+    background: var(--dorado);
+}
+
+.emblema-balon {
+    font-size: 2.4rem;
+    filter: drop-shadow(0 0 12px rgba(217, 173, 89, 0.25));
+}
+
+.texto-invitacion {
+    color: var(--gris);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.portada h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4.3rem, 11vw, 8rem);
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: -2px;
+}
+
+.titulo-dorado {
+    color: var(--dorado-claro);
+    font-style: italic;
+}
+
+.separador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    margin: 25px auto;
+}
+
+.separador > span:first-child,
+.separador > span:last-child {
+    width: 65px;
+    height: 1px;
+    background: var(--dorado);
+}
+
+.separador-estrella {
+    color: var(--dorado);
+    font-size: 0.9rem;
+}
+
+.nombre-graduado {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.promocion {
+    margin-top: 12px;
+
+    color: var(--gris);
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+}
+
+.promocion span {
+    color: var(--dorado);
+}
+
+.mensaje-deportivo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    margin: 35px auto 0;
+}
+
+.trofeo {
+    font-size: 2rem;
+}
+
+.mensaje-deportivo p {
+    color: var(--dorado-claro);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 2;
+}
+
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    border: 1px solid var(--dorado);
+    padding: 15px 26px;
+
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.boton-principal {
+    margin-top: 38px;
+    border-radius: 40px;
+
+    background: var(--dorado);
+    color: var(--azul);
+}
+
+.boton-principal:hover {
+    transform: translateY(-4px);
+    background: var(--dorado-claro);
+}
+
+.flecha {
+    font-size: 1rem;
+}
+
+.texto-inferior {
+    margin-top: 38px;
+    color: var(--gris);
+    font-size: 0.58rem;
+    letter-spacing: 3px;
+}
+
+.indicador-scroll {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: grid;
+    place-items: center;
+
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(217, 173, 89, 0.65);
+    border-radius: 50%;
+
+    color: var(--dorado);
+    animation: flotar 2s ease-in-out infinite;
+}
+
+
+/* =========================================
+   SECCIONES GENERALES
+   ========================================= */
+
+.seccion {
+    position: relative;
+    padding: 100px 24px;
+}
+
+.contenido-seccion {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.seccion h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.8rem, 7vw, 4.7rem);
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.texto-descripcion {
+    max-width: 660px;
+    margin: 0 auto 20px;
+
+    font-size: 0.9rem;
+    line-height: 2;
+}
+
+.firma {
+    margin-top: 30px;
+    color: #a57c3e;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.9rem;
+    font-style: italic;
+}
+
+.adorno-central {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    margin: 22px auto;
+}
+
+.adorno-central span:first-child,
+.adorno-central span:last-child {
+    width: 55px;
+    height: 1px;
+    background: var(--dorado);
+}
+
+.adorno-central span:nth-child(2) {
+    font-size: 1.2rem;
+}
+
+
+/* =========================================
+   MENSAJE DE BIENVENIDA
+   ========================================= */
+
+.mensaje {
+    overflow: hidden;
+    background: var(--crema);
+    color: var(--texto-oscuro);
+    text-align: center;
+}
+
+.mensaje .etiqueta {
+    color: #9b783f;
+    margin-bottom: 12px;
+}
+
+.mensaje-decoracion {
+    position: absolute;
+    color: rgba(166, 128, 65, 0.12);
+    pointer-events: none;
+}
+
+.decoracion-izquierda {
+    top: 45px;
+    left: 4%;
+    font-size: clamp(4rem, 10vw, 9rem);
+    transform: rotate(-20deg);
+}
+
+.decoracion-derecha {
+    right: 6%;
+    bottom: 40px;
+    font-size: 8rem;
+}
+
+.mensaje .firma {
+    color: #a57c3e;
+}
+
+.insignia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 35px;
+
+    color: #9b783f;
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+}
+
+.insignia span {
+    font-size: 0.8rem;
+}
+
+
+/* =========================================
+   FRANJA DESTACADA
+   ========================================= */
+
+.franja {
+    padding: 40px 22px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #122a40,
+            #091827 50%,
+            #122a40
+        );
+
+    border-top: 1px solid rgba(217, 173, 89, 0.35);
+    border-bottom: 1px solid rgba(217, 173, 89, 0.35);
+}
+
+.franja-contenido {
+    max-width: 900px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+
+    text-align: center;
+}
+
+.franja-icono {
+    font-size: 2.3rem;
+}
+
+.franja-etiqueta {
+    color: var(--dorado);
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+}
+
+.franja h2 {
+    margin-top: 5px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 500;
+}
+
+
+/* =========================================
+   DETALLES DEL EVENTO
+   ========================================= */
+
+.evento {
+    text-align: center;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            #142c43,
+            var(--azul) 70%
+        );
+}
+
+.evento h2 {
+    margin-top: 10px;
+}
+
+.subtitulo-evento {
+    max-width: 550px;
+    margin: 20px auto 0;
+
+    color: var(--gris);
+    font-size: 0.85rem;
+}
+
+.tarjetas-evento {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+
+    margin-top: 55px;
+}
+
+.tarjeta {
+    padding: 35px 20px;
+    min-width: 0;
+
+    border: 1px solid rgba(217, 173, 89, 0.35);
+    background: rgba(255, 255, 255, 0.025);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    border-color: var(--dorado);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tarjeta-icono {
+    display: grid;
+    place-items: center;
+
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 22px;
+
+    border: 1px solid var(--dorado);
+    border-radius: 50%;
+}
+
+.tarjeta-icono svg {
+    width: 27px;
+    height: 27px;
+
+    fill: none;
+    stroke: var(--dorado);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.tarjeta-etiqueta {
+    color: var(--dorado);
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+}
+
+.tarjeta h3 {
+    margin-top: 12px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.tarjeta-detalle {
+    margin-top: 10px;
+    color: var(--gris);
+    font-size: 0.75rem;
+}
+
+.enlace-ubicacion {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 20px;
+    padding-bottom: 4px;
+
+    border-bottom: 1px solid var(--dorado);
+    color: var(--dorado-claro);
+
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.enlace-ubicacion:hover {
+    color: white;
+}
+
+.nota-evento {
+    margin-top: 30px;
+    color: #8997a5;
+    font-size: 0.7rem;
+}
+
+
+/* =========================================
+   CONFIRMACIÓN DE ASISTENCIA
+   ========================================= */
+
+.confirmacion {
+    overflow: hidden;
+
+    background: var(--crema);
+    color: var(--texto-oscuro);
+}
+
+.confirmacion-fondo {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(247, 240, 227, 0.96),
+            rgba(247, 240, 227, 0.88)
+        ),
+        url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1600&q=85")
+        center / cover no-repeat;
+}
+
+.confirmacion-contenido {
+    position: relative;
+    z-index: 1;
+
+    max-width: 1050px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.confirmacion-texto h2 {
+    margin-top: 15px;
+}
+
+.confirmacion-texto h2 span {
+    display: block;
+    color: #a57c3e;
+    font-style: italic;
+}
+
+.confirmacion-texto .texto-descripcion {
+    margin-left: 0;
+    color: #515d68;
+}
+
+.confirmacion-texto .adorno-central {
+    justify-content: flex-start;
+}
+
+.formulario-tarjeta {
+    padding: 32px;
+
+    border: 1px solid #e4d7bd;
+    border-radius: 8px;
+
+    background: rgba(255, 253, 248, 0.95);
+    box-shadow: 0 15px 45px rgba(25, 35, 45, 0.08);
+}
+
+.formulario-cabecera {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e9e0d0;
+}
+
+.formulario-balon {
+    display: grid;
+    place-items: center;
+
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    background: #f0e3c9;
+    font-size: 1.5rem;
+}
+
+.formulario-cabecera h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.formulario-cabecera p {
+    margin-top: 5px;
+    color: #737373;
+    font-size: 0.7rem;
+}
+
+.formulario {
+    margin-top: 25px;
+}
+
+.campo {
+    margin-bottom: 22px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 9px;
+
+    color: var(--texto-oscuro);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.campo input {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+
+    border: 1px solid #dcd2c1;
+    border-radius: 5px;
+
+    outline: none;
+    background: white;
+    color: var(--texto-oscuro);
+
+    font-size: 0.85rem;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo input:focus {
+    border-color: #b18a43;
+    box-shadow: 0 0 0 3px rgba(177, 138, 67, 0.12);
+}
+
+.campo input::placeholder {
+    color: #99948b;
+}
+
+.campo small {
+    display: block;
+    margin-top: 8px;
+    color: #797979;
+    font-size: 0.68rem;
+}
+
+.boton-enviar {
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+
+    background: #c49a50;
+    color: white;
+}
+
+.boton-enviar:disabled {
+    cursor: not-allowed;
+    opacity: 0.85;
+}
+
+.aviso-formulario {
+    margin-top: 18px;
+    text-align: center;
+
+    color: #747474;
+    font-size: 0.65rem;
+}
+
+.aviso-formulario span {
+    margin-right: 5px;
+}
+
+
+/* =========================================
+   PIE DE PÁGINA
+   ========================================= */
+
+.pie {
+    padding: 65px 22px 35px;
+    background: #050d16;
+    text-align: center;
+}
+
+.pie-trofeo {
+    font-size: 2.8rem;
+}
+
+.pie .separador {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.frase-final {
+    max-width: 520px;
+    margin: 0 auto;
+
+    color: var(--gris);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.nombre-footer {
+    margin-top: 30px;
+
+    color: var(--dorado-claro);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+.pie-promocion {
+    margin-top: 10px;
+
+    color: var(--gris);
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+}
+
+.volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 35px;
+    color: var(--dorado);
+
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+}
+
+.volver span {
+    display: grid;
+    place-items: center;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+    background: var(--dorado);
+    color: var(--azul);
+
+    font-size: 1rem;
+}
+
+.pie-final {
+    margin-top: 45px;
+    padding-top: 22px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    color: #8994a0;
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   ANIMACIONES
+   ========================================= */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, 7px);
+    }
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 850px) {
+
+    .seccion {
+        padding: 80px 22px;
+    }
+
+    .confirmacion-contenido {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        max-width: 600px;
+    }
+
+    .confirmacion-texto {
+        text-align: center;
+    }
+
+    .confirmacion-texto .adorno-central {
+        justify-content: center;
+    }
+
+    .confirmacion-texto .texto-descripcion {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .confirmacion-texto .firma {
+        margin-top: 20px;
+    }
+
+    .tarjetas-evento {
+        gap: 12px;
+    }
+
+    .tarjeta {
+        padding: 28px 12px;
+    }
+
+    .tarjeta h3 {
+        font-size: 1.45rem;
+    }
+}
+
+
+/* =========================================
+   CELULARES
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    html {
+        scroll-padding-top: 15px;
+    }
+
+    .navegacion {
+        min-height: 65px;
+        padding: 14px 18px;
+        gap: 10px;
+    }
+
+    .logo {
+        gap: 7px;
+        font-size: 0.62rem;
+        letter-spacing: 1px;
+    }
+
+    .logo-icono {
+        font-size: 1.2rem;
+    }
+
+    .nav-boton {
+        padding: 9px 10px;
+        font-size: 0.53rem;
+        letter-spacing: 0.4px;
+    }
+
+    .portada {
+        padding: 110px 20px 75px;
+        background-position: 55% center;
+    }
+
+    .etiqueta-superior {
+        max-width: 320px;
+        margin: 0 auto;
+        font-size: 0.57rem;
+        letter-spacing: 1.7px;
+    }
+
+    .emblema {
+        margin: 24px 0 17px;
+        gap: 13px;
+    }
+
+    .emblema-linea {
+        width: 42px;
+    }
+
+    .emblema-balon {
+        font-size: 2rem;
+    }
+
+    .texto-invitacion {
+        font-size: 0.77rem;
+    }
+
+    .portada h1 {
+        font-size: clamp(3.6rem, 16vw, 5.3rem);
+        letter-spacing: -1.5px;
+    }
+
+    .separador {
+        margin: 20px auto;
+    }
+
+    .nombre-graduado {
+        font-size: 0.72rem;
+        letter-spacing: 2.5px;
+    }
+
+    .promocion {
+        font-size: 0.65rem;
+        letter-spacing: 3px;
+    }
+
+    .mensaje-deportivo {
+        gap: 10px;
+        margin-top: 28px;
+    }
+
+    .trofeo {
+        font-size: 1.6rem;
+    }
+
+    .mensaje-deportivo p {
+        font-size: 0.55rem;
+        letter-spacing: 1.2px;
+    }
+
+    .boton {
+        padding: 14px 18px;
+        font-size: 0.62rem;
+        letter-spacing: 1px;
+    }
+
+    .texto-inferior {
+        font-size: 0.52rem;
+        letter-spacing: 1.5px;
+        line-height: 1.8;
+    }
+
+    .seccion {
+        padding: 70px 20px;
+    }
+
+    .seccion h2 {
+        font-size: clamp(2.7rem, 12vw, 3.6rem);
+    }
+
+    .texto-descripcion {
+        font-size: 0.83rem;
+        line-height: 1.9;
+    }
+
+    .decoracion-izquierda {
+        top: 20px;
+        left: -15px;
+        font-size: 4rem;
+    }
+
+    .decoracion-derecha {
+        right: -15px;
+        bottom: 20px;
+        font-size: 5rem;
+    }
+
+    .firma {
+        font-size: 1.65rem;
+    }
+
+    .insignia {
+        font-size: 0.55rem;
+        letter-spacing: 2px;
+    }
+
+    .franja {
+        padding: 30px 16px;
+    }
+
+    .franja-contenido {
+        gap: 12px;
+    }
+
+    .franja-icono {
+        font-size: 1.5rem;
+    }
+
+    .franja-etiqueta {
+        font-size: 0.5rem;
+        letter-spacing: 1.4px;
+    }
+
+    .franja h2 {
+        font-size: 1.8rem;
+    }
+
+    .tarjetas-evento {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 35px;
+    }
+
+    .tarjeta {
+        padding: 30px 20px;
+    }
+
+    .tarjeta h3 {
+        font-size: 1.7rem;
+    }
+
+    .confirmacion-contenido {
+        gap: 30px;
+    }
+
+    .formulario-tarjeta {
+        padding: 23px 18px;
+    }
+
+    .formulario-cabecera h3 {
+        font-size: 1.6rem;
+    }
+
+    .campo input {
+        min-height: 47px;
+    }
+
+    .pie {
+        padding: 50px 20px 25px;
+    }
+
+    .nombre-footer {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+    }
+
+    .pie-final {
+        font-size: 0.48rem;
+        letter-spacing: 1px;
+        line-height: 1.8;
+    }
+}
+
+
+/* =========================================
+   ACCESIBILIDAD
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Mensajes del formulario de confirmación */
+#mensaje-estado {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+#mensaje-estado:empty {
+    display: none;
+}
+
+#mensaje-estado.mensaje-exito {
+    color: #166534;
+    background: #dcfce7;
+    border: 1px solid #86efac;
+}
+
+#mensaje-estado.mensaje-error {
+    color: #991b1b;
+    background: #fee2e2;
+    border: 1px solid #fca5a5;
+}
+
+#mensaje-estado.mensaje-cargando {
+    color: #92400e;
+    background: #fef3c7;
+    border: 1px solid #fcd34d;
+}
